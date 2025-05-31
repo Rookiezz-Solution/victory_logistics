@@ -182,6 +182,7 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
+	base: '/victory_logistics/',
 	customLogger: logger,
 	plugins: [react(), addTransformIndexHtml],
 	server: {
