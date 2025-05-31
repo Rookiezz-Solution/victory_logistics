@@ -1,0 +1,136 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 99%; /* Very light neutral (almost white) */
+    --foreground: 240 6% 10%; /* Dark Neutral (for text) */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 240 6% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 10%;
+
+    --primary: 220 90% 55%; /* Brighter, modern blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 240 5% 90%; /* Light Gray */
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 96%; /* Lighter Gray */
+    --muted-foreground: 240 4% 46%; /* Medium Gray */
+
+    --accent: 38 92% 50%; /* Gold/Yellow (as in theme) */
+    --accent-foreground: 240 6% 10%;
+
+    --destructive: 0 72% 51%; /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 88%; /* Light Gray Border */
+    --input: 240 6% 88%; 
+    --ring: 220 90% 60%; /* Primary color for focus rings */
+
+    --radius: 0.5rem; /* Rounded corners */
+  }
+
+  .dark {
+    /* Dark mode variables if needed later */
+    --background: 240 6% 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 5% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 220 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 20%;
+    --muted-foreground: 240 4% 65%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 240 6% 10%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 25%;
+    --input: 240 4% 25%;
+    --ring: 220 90% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-neutral-800; /* Match theme's darker text for headings */
+  }
+  
+  .text-shadow {
+    text-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  }
+  .text-shadow-md {
+    text-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+  }
+  .text-shadow-lg {
+    text-shadow: 0px 3px 7px rgba(0,0,0,0.3);
+  }
+  
+  .form-input {
+    @apply block w-full px-4 py-2.5 border border-neutral-300 rounded-md shadow-sm 
+           focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary 
+           sm:text-sm transition-all duration-200 bg-white text-neutral-800 placeholder-neutral-400;
+  }
+  .form-input:focus {
+    @apply ring-offset-0; /* No offset for cleaner look */
+  }
+  
+  /* Custom scrollbar (optional, but nice touch) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/70 rounded-full border-2 border-transparent bg-clip-content;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+
+  .prose {
+    @apply text-neutral-700;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-neutral-800;
+  }
+  .prose a {
+    @apply text-primary hover:text-primary/80;
+  }
+  .prose strong {
+    @apply text-neutral-800;
+  }
+  .prose ul > li::before {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  .container { /* Ensuring container has consistent padding if not using Tailwind's default */
+    @apply max-w-screen-xl; /* Example, adjust as per your design preference */
+  }
+}
