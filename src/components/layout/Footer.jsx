@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { COMPANY_NAME, ADDRESS, CONTACT_PHONE_1, CONTACT_EMAIL_1, INSTAGRAM_URL, FACEBOOK_URL, NAV_LINKS, services as serviceItems, VICTORY_LOGO_URL, ROOKIEZZ_SOLUTIONS_URL } from '@/constants';
+import { COMPANY_NAME, ADDRESS, CONTACT_PHONE_1,CONTACT_PHONE_2,CONTACT_EMAIL_2, CONTACT_EMAIL_1, INSTAGRAM_URL, FACEBOOK_URL, NAV_LINKS, services as serviceItems, VICTORY_LOGO_URL, ROOKIEZZ_SOLUTIONS_URL } from '@/constants';
 import { Button } from '@/components/ui/button';
 
 
@@ -65,13 +65,19 @@ const Footer = () => {
                 <MapPin size={20} className="mr-3 mt-0.5 text-primary flex-shrink-0" />
                 <span className="text-neutral-300">{ADDRESS}</span>
               </li>
-              <li className="flex items-center">
-                <Phone size={18} className="mr-3 text-primary flex-shrink-0" />
-                <a href={`tel:${CONTACT_PHONE_1}`} className={footerLinkClass}>{CONTACT_PHONE_1}</a>
+              <li className="flex items-start">
+                <Phone size={18} className="mr-3 text-primary mt-1 flex-shrink-0" />
+                  <div className="flex flex-col">
+                  <a href={`tel:${CONTACT_PHONE_1}`} className={footerLinkClass}>{CONTACT_PHONE_1}</a>
+                  <a href={`tel:${CONTACT_PHONE_2}`} className={footerLinkClass}>{CONTACT_PHONE_2}</a>
+                  </div>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-3 text-primary flex-shrink-0" />
-                <a href={`mailto:${CONTACT_EMAIL_1}`} className={footerLinkClass}>{CONTACT_EMAIL_1}</a>
+                <div className="flex flex-col">
+                  <a href={`tel:${CONTACT_EMAIL_1}`} className={footerLinkClass}>{CONTACT_EMAIL_1}</a>
+                  <a href={`tel:${CONTACT_EMAIL_2}`} className={footerLinkClass}>{CONTACT_EMAIL_2}</a>
+                  </div>
               </li>
             </ul>
             <Button asChild variant="outline" className="mt-6 border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto">

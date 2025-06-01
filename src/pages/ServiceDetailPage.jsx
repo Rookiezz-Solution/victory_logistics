@@ -110,8 +110,9 @@ const ServiceDetailPage = () => {
     <div className="bg-white">
       <ParallaxLayer offset={-25} tag="section">
         <div className="relative md:py-28 text-white overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 shadow-sm opacity-80"
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 shadow-sm"
             style={{ backgroundImage: `url(${service.image})` }}/>
+             <div className="absolute inset-0 bg-black bg-opacity-50" />
 
           <div className="container mx-auto relative z-10 text-center px-4">
             <motion.div
@@ -120,13 +121,13 @@ const ServiceDetailPage = () => {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="inline-block p-4 bg-white/10 rounded-xl mb-6"
             >
-              {React.cloneElement(iconMap[service.icon] || <Ship />, {className: "w-12 h-12 md:w-16 md:h-16 text-neutral-700"})}
+              {React.cloneElement(iconMap[service.icon] || <Ship />, {className: "w-12 h-12 md:w-16 md:h-16 text-white"})}
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-              className="text-4xl lg:text-5xl font-extrabold mb-4 text-black/80 shadow-sm"
+              className="text-4xl lg:text-5xl font-extrabold mb-4 text-white shadow-sm"
             >
               {service.name}
             </motion.h1>
@@ -134,7 +135,7 @@ const ServiceDetailPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="text-lg md:text-xl max-w-3xl mx-auto text-black"
+              className="text-lg md:text-xl max-w-3xl mx-auto text-white"
             >
               {service.description}
             </motion.p>

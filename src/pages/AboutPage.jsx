@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { COMPANY_NAME, INCORPORATION_DATE, CIN_NUMBER, DIRECTORS, coreValues, milestones } from '@/constants';
 import { Building, Info, CalendarDays, Users, Target, CheckCircle, Lightbulb, ShieldCheck } from 'lucide-react';
+import { OUR_JOURNEY } from '../assets';
 
 const iconMap = {
     Users: <Users className="w-10 h-10 text-primary" />,
@@ -67,7 +68,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="rounded-xl overflow-hidden shadow-2xl"
             >
-              <img  class="w-full h-auto object-cover aspect-video" alt="Team brainstorming logistics solutions" src="https://images.unsplash.com/photo-1605732562742-3023a888e56e" />
+              <img  class="w-full h-auto object-cover aspect-video" alt="Team brainstorming logistics solutions" src={OUR_JOURNEY} />
             </motion.div>
           </div>
         </div>

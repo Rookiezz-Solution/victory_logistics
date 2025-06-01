@@ -49,7 +49,7 @@ export const services = [
     icon: "Anchor",
     shortDescription: "Global ocean freight services for FCL and LCL shipments, connecting you to major trade lanes.",
     description: "Comprehensive ocean freight solutions, including FCL and LCL, to connect your business to global markets with reliability and competitive rates.",
-    details: "Our Ocean Freight services are the backbone of global trade, offering flexible and cost-efficient solutions for shipping goods worldwide. We provide both Full Container Load (FCL) and Less than Container Load (LCL) options, catering to businesses of all sizes. Victory Logistics partners with major shipping lines to secure competitive rates and ensure space availability on key trade routes. We manage all aspects of your ocean shipment, including documentation, port handling, customs clearance, and inland transportation. Specialized services for refrigerated cargo, hazardous materials, and break-bulk shipments are also available.",
+    details:"Our Ocean Freight services are the backbone of global trade, offering flexible and cost-efficient solutions for shipping goods worldwide. We provide both Full Container Load (FCL) and Less than Container Load (LCL) options, catering to businesses of all sizes.FCL is ideal for shipments that can fill an entire container. It offers maximum security, lower cost per unit, and faster transit since the container moves directly from origin to destination without being opened en route. This is perfect for larger shipments or when you need exclusive use of the container.LCL, on the other hand, is designed for smaller shipments that don’t require a full container. Your goods are consolidated with other cargo heading to the same destination, making it a cost-effective choice for low-volume shipments. LCL provides flexibility for businesses that don’t yet have the volume to justify FCL.Victory Logistics partners with major shipping lines to secure competitive rates and ensure space availability on key trade routes. We manage all aspects of your ocean shipment, including documentation, port handling, customs clearance, and inland transportation. Specialized services for refrigerated cargo, hazardous materials, and break-bulk shipments are also available, ensuring your unique logistics needs are fully covered.",
     image: `${OCEAN_FREIGHT}`,
     keyBenefits: ["Global Reach", "FCL & LCL Options", "Competitive Rates", "Port-to-Door Service", "Specialized Cargo Handling"]
   },
@@ -165,13 +165,6 @@ export const testimonialsData = [
     company: "Supply Chain Manager, Fabrica Textiles",
     image: "woman-professional-portrait-smiling-1",
     quote: "The team at Victory Logistics is incredibly responsive and proactive. They handle our international shipments seamlessly, always keeping us informed.",
-    rating: 5,
-  },
-  {
-    name: "Amit Patel",
-    company: "Owner, BuildWell Construction",
-    image: "construction-manager-hardhat-smiling-1",
-    quote: "We've relied on Victory for our project cargo needs, and they've never disappointed. Their expertise in handling oversized shipments is exceptional.",
     rating: 5,
   },
   {

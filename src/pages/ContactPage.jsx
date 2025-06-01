@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import 'leaflet/dist/leaflet.css';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { motion } from 'framer-motion';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
@@ -6,6 +8,22 @@ import { COMPANY_NAME, ADDRESS, CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL_
 import { Send, Mail, Phone, MapPin, Instagram, Facebook, MessageSquare } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import ParallaxLayer from '@/components/ParallaxLayer';
+
+const MapComponent = () => {
+  const position = [ADDRESS_COORDINATES.lat,ADDRESS_COORDINATES.lng]; // Latitude, Longitude
+
+  return (
+    <MapContainer center={position} zoom={13} style={{ height: '100vh', width: '100%' }}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      />
+      <Marker position={position}>
+        <Popup>A marker in London.</Popup>
+      </Marker>
+    </MapContainer>
+  );
+};
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -168,16 +186,7 @@ const ContactPage = () => {
       {/* Map Section */}
       <ParallaxLayer offset={-20} tag="section">
         <div className="h-[400px] md:h-[500px] bg-neutral-200">
-          <iframe
-            title="Victory Logistics Location"
-            src={`https://www.openstreetmap.org/export/embed.html?bbox=${ADDRESS_COORDINATES.lng-0.01}%2C${ADDRESS_COORDINATES.lat-0.01}%2C${ADDRESS_COORDINATES.lng+0.01}%2C${ADDRESS_COORDINATES.lat+0.01}&layer=mapnik&marker=${ADDRESS_COORDINATES.lat}%2C${ADDRESS_COORDINATES.lng}`}
-            width="100%"
-            height="100%"
-            style={{ border:0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <MapComponent/>
         </div>
       </ParallaxLayer>
     </div>

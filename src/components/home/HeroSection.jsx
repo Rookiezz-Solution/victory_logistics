@@ -47,7 +47,6 @@ const HeroSection = () => {
   
   const currentImage = imagesToDisplay[currentImageIndex];
 
-  console.log(activeHeroImages.length)
   return (
     <section className="relative h-screen min-h-[600px] sm:min-h-[700px] text-white overflow-hidden flex items-center justify-center">
       <AnimatePresence initial={false}>
@@ -75,7 +74,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="mb-6"
         >
-          <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
+          <span className="inline-block bg-primary/20 text-white px-4 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
             Global Logistics Excellence
           </span>
         </motion.div>
@@ -86,14 +85,14 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-shadow-md max-w-3xl"
         >
-          <span className="block">{COMPANY_NAME.split(" ")[0]} Logistics:</span>
-          Your Partner in <span className="text-primary">Smart</span> Supply Chain Solutions.
+          <span className="block text-white">{COMPANY_NAME.split(" ")[0]} Logistics:</span>
+          <span className="block text-white">Your Partner in  <span className="text-primary">Smart</span> Supply Chain Solutions.</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-          className="text-lg md:text-xl mb-10 max-w-2xl text-neutral-200 text-shadow-sm"
+          className="text-lg md:text-xl mb-10 max-w-2xl text-neutral-200 text-shadow-sm text-white"
         >
           Delivering reliable, efficient, and innovative logistics services tailored to fuel your business growth and success globally.
         </motion.p>

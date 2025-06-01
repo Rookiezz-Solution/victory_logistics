@@ -8,6 +8,7 @@ import { services as serviceItems } from '@/constants';
 import { Send, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { CONTACT_EMAIL_1, CONTACT_PHONE_1, ADDRESS } from '@/constants';
 import { useEffect, useRef } from 'react';
+import { CONTACT_EMAIL_2, CONTACT_PHONE_2 } from '../../constants';
 
 const ContactFormSection = () => {
   const { toast } = useToast();
@@ -61,9 +62,9 @@ const ContactFormSection = () => {
   };
 
   const contactInfo = [
-    { icon: <Mail size={22} className="text-primary" />, text: CONTACT_EMAIL_1, href: `mailto:${CONTACT_EMAIL_1}` },
-    { icon: <Phone size={22} className="text-primary" />, text: CONTACT_PHONE_1, href: `tel:${CONTACT_PHONE_1}` },
-    { icon: <MapPin size={22} className="text-primary" />, text: ADDRESS, href: "#" }, 
+    { icon: <Mail size={22} className="text-primary" />, text: [CONTACT_EMAIL_1,CONTACT_EMAIL_2], href: `mailto:${CONTACT_EMAIL_1}` },
+    { icon: <Phone size={22} className="text-primary" />, text: [CONTACT_PHONE_1,CONTACT_PHONE_2], href: `tel:${CONTACT_PHONE_1}` },
+    { icon: <MapPin size={22} className="text-primary" />, text: [ADDRESS], href: "#" }, 
   ];
 
   const borderVariants = {
@@ -173,7 +174,10 @@ const ContactFormSection = () => {
                                     {info.text === ADDRESS ? "Address" : info.href.startsWith("mailto:") ? "Email Us" : "Call Us"}
                                 </span>
                                 <a href={info.href !== "#" ? info.href : undefined} className={`block text-neutral-700 font-medium ${info.href !== "#" ? "hover:text-primary" : ""}`}>
-                                    {info.text}
+                                    {info.text[0]}
+                                </a>
+                                <a href={info.href !== "#" ? info.href : undefined} className={`block text-neutral-700 font-medium ${info.href !== "#" ? "hover:text-primary" : ""}`}>
+                                    {info.text[1]}
                                 </a>
                             </div>
                         </div>
